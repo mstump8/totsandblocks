@@ -25,7 +25,7 @@
         #####  Set cookie for user #####
         setcookie('userID', $user_id, time()+3600);
 
-        // find out the user's username and password
+        // find out the user's username and password 
         $user_info_sql = "select * from totsandblocks.Users where userID=$user_id";
         $user_result = mysqli_query($con, $user_info_sql);
         $user_row = mysqli_fetch_array($user_result);
@@ -49,7 +49,7 @@
         else
             die("Please enter password first!"); 
 
-        // SQL statement to check user login info
+        // SQL statement to check user login info  (something with the login is not working/says this table doesn't exist)
         $users_sql = "select * from totsandblocks.Users where username = '$user'"; // do not compare passwords
         $users_results = mysqli_query($con, $users_sql);
 
